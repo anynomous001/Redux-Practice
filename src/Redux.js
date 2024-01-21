@@ -1,5 +1,7 @@
 import { nanoid } from "nanoid";
+import { applyMiddleware } from "redux";
 import { createStore } from "redux";
+import logger from "redux-logger";
 
 
 //Action Constants
@@ -82,7 +84,7 @@ const reducer = (state = initialCounter, action) => {
 
 //creating Store
 
-const store = createStore(reducer)
+const store = createStore(reducer, applyMiddleware(logger))
 
 
 // Exporting All Dispatch Actions

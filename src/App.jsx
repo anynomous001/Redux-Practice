@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { increment, decrement, addProducts, deleteProducts } from "./Redux"
+import { increment, decrement, addProducts, deleteProducts, store } from "./Redux"
 import { nanoid } from "nanoid"
 import React from "react"
 
@@ -10,7 +10,7 @@ function App() {
   const dispatch = useDispatch()
 
 
-
+  console.log(store)
   const [inputItem, setInputItem] = React.useState('')
 
   function handleIncrement() {

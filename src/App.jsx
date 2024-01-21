@@ -22,8 +22,9 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    dispatch(addProducts(inputItem))
     setInputItem('')
+
+    dispatch(addProducts(inputItem))
 
   }
 
@@ -39,7 +40,7 @@ function App() {
         <button onClick={handleDecrement}>decrement</button>
       </div>
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange={(e) => setInputItem(e.target.value)} />
+        <input type="text" value={inputItem} onChange={(e) => setInputItem(e.target.value)} />
         <button>Add Item</button>
       </form>
       {products.map(item => {
